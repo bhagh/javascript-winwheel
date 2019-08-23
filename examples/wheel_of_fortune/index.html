@@ -84,7 +84,7 @@
                 'textFontSize'    : 24,         // Set default font size for the segments.
                 'textOrientation' : 'vertical', // Make text vertial so goes down from the outside of wheel.
                 'textAlignment'   : 'outer',    // Align text to outside of wheel.
-                'numSegments'     : 24,         // Specify number of segments.
+                'numSegments'     : 16,         // Specify number of segments.
                 'segments'        :             // Define segments including colour and text.
                 [                               // font size and test colour overridden on backrupt segments.
                    {'fillStyle' : '#ee1c24', 'text' : '300'},
@@ -123,7 +123,7 @@
                 },
                 'pins' :				// Turn pins on.
                 {
-                    'number'     : 24,
+                    'number'     : 16,
                     'fillStyle'  : 'silver',
                     'outerRadius': 4,
                 }
@@ -216,8 +216,11 @@
             // -------------------------------------------------------
             function resetWheel()
             {
+                let currentRotation = (theWheel.rotationAngle % 360).toFixed(0);
+                console.log(theWheel.rotationAngle);
+                console.log(currentRotation);
                 theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
-                theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+                theWheel.rotationAngle = parseInt(currentRotation);    // Re-set the wheel angle to 0 degrees.
                 theWheel.draw();                // Call draw to render changes to the wheel.
 
                 document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
