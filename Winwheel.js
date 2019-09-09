@@ -2000,7 +2000,7 @@ function Animation(options)
         'duration'          : 10,              // Duration of the animation.
         'yoyo'              : false,           // If the animation is to reverse back again i.e. yo-yo.
         'repeat'            : null,            // The number of times the animation is to repeat, -1 will cause it to repeat forever.
-        'easing'            : null,            // The easing to use for the animation, default is the best for spin to stop. Use Linear.easeNone for no easing.
+        'easing'            : 'Power2.easeOut',            // The easing to use for the animation, default is the best for spin to stop. Use Linear.easeNone for no easing.
         'stopAngle'         : null,            // Used for spinning, the angle at which the wheel is to stop.
         'spins'             : null,            // Used for spinning, the number of complete 360 degree rotations the wheel is to do.
         'clearTheCanvas'    : null,            // If set to true the canvas will be cleared before the wheel is re-drawn, false it will not, null the animation will abide by the value of this property for the parent wheel object.
